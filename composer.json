@@ -1,0 +1,29 @@
+{
+	"name" : "stinger-soft/media-parser-bundle",
+	"type" : "symfony-bundle",
+	"description" : "Simple bundle to extract meta information from media files (e.g. mp3)",
+	"keywords" : [
+		"Audio",
+		"Metadata",
+		"Mp3"
+	],
+	"homepage": "http://www.stinger-soft.net",
+	"authors": [{
+		"name": "Oliver Kotte",
+		"email": "oliver.kotte@stinger-soft.net"
+	},{
+		"name": "Florian Meyer",
+		"email": "florian.meyer@stinger-soft.net"
+	}],
+	"autoload" : {
+		"psr-4" : {
+			"StingerSoft\\MediaParserBundle\\" : "src"
+		}
+	},
+	"license" : "MIT",
+	"require" : {
+		"php" : ">=5.5",
+		"symfony/framework-bundle" : "^2.7",
+		"phansys/getid3" : "2.1.*@dev"
+	}
+}
