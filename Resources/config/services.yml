@@ -1,5 +1,5 @@
 parameters:
-    stinger_soft_media_parser.media_parser_chain.class: StingerSoft\MediaParsingBundle\Parser\MediaParserChain
+    stinger_soft_media_parser.parser_chain.class: StingerSoft\MediaParsingBundle\Parser\ParserChain
     stinger_soft_media_parser.media_parser.mp3.class: StingerSoft\MediaParsingBundle\Parser\Types\Mp3Parser
 
 services:
@@ -9,4 +9,4 @@ services:
     stinger_soft_media_parser.media_parser.mp3:
         class: %stinger_soft_media_parser.media_parser.mp3.class%
         tags:
-            -  { name: stinger_soft_media_parser.mediaparser, alias: mp3 }
+            -  { name: stinger_soft_media_parser.mediaparser }

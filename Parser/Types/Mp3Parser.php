@@ -13,8 +13,8 @@ namespace StingerSoft\MediaParsingBundle\Parser\Types;
 use StingerSoft\MediaParsingBundle\Parser\IMediaParser;
 use StingerSoft\MediaParsingBundle\Parser\IMediaInformation;
 use Symfony\Component\HttpFoundation\File\File;
-use GetId3;
 use StingerSoft\MediaParsingBundle\Parser\Information\SongInformation;
+use GetId3\GetId3Core;
 
 class Mp3Parser implements IMediaParser{
 	
@@ -22,7 +22,7 @@ class Mp3Parser implements IMediaParser{
 	 * @see \StingerSoft\MediaParsingBundle\Parser\IAudioParser::parseFile()
 	 */
 	public function parseFile(File $file) {
-		$getId3 = new GetId3();
+		$getId3 = new GetId3Core();
 		$getId3->option_md5_data        = true;
 		$getId3->option_md5_data_source = true;
 		$getId3->encoding               = 'UTF-8';

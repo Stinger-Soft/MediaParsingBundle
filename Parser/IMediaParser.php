@@ -15,6 +15,8 @@ namespace StingerSoft\MediaParsingBundle\Parser;
 use Symfony\Component\HttpFoundation\File\File;
 
 interface IMediaParser {
+	
+	const SERVICE_TAG = 'stinger_soft_media_parser.mediaparser';
 
 	/**
 	 * Parses the given file and extract the meta data

@@ -12,9 +12,13 @@
 
 namespace StingerSoft\MediaParsingBundle\Parser\Information;
 
-class SongInformation implements ISongInformation{
-	
-	protected $title;
+/**
+ * Implementation of a meta file describing common information of song
+ * @author Florian Meyer
+ *
+ */
+class SongInformation extends AbstractMediaInformation implements ISongInformation{
+
 	
 	protected $artist;
 	
@@ -30,9 +34,7 @@ class SongInformation implements ISongInformation{
 	
 	protected $totalSetNumbers;
 	
-	public function getTitle() {
-		return $this->title;
-	}
+
 	public function setTitle($title) {
 		$this->title = $title;
 		return $this;

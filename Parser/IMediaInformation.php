@@ -24,4 +24,15 @@ interface IMediaInformation {
 	 */
 	public function getMimeType();
 	
+	public function getFilePath();
+	
+	public function setFilePath($path);
+	
+	public function getFileSize();
+	
+	public function setFileSize($size);
+	
+	public function getLastModified();
+	
+	public function setLastModified(\DateTime $date);
 }

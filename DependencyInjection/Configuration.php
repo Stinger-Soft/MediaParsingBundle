@@ -10,7 +10,7 @@
  * file that was distributed with this source code.
  */
 
-namespace StingerSoft\MediaParserBundle\DependencyInjection;
+namespace StingerSoft\MediaParsingBundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
