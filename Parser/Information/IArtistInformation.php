@@ -1,5 +1,4 @@
 <?php
-
 /*
  * This file is part of the Stinger Media Parser package.
  *
@@ -10,18 +9,14 @@
  * file that was distributed with this source code.
  */
 
-namespace StingerSoft\MediaParsingBundle\Parser;
+namespace StingerSoft\MediaParsingBundle\Parser\Information;
 
-interface IMediaInformation {
+use StingerSoft\MediaParsingBundle\Parser\IMediaInformation;
+
+interface IArtistInformation extends IMediaInformation{
 	
 	/**
-	 * @return string return the printable title of the media file
+	 * @return string The name of the artist performing the given media file
 	 */
-	public function getTitle();
-	
-	/**
-	 * @return string the string representation of the mime type
-	 */
-	public function getMimeType();
-	
+	public function getArtist();
 }

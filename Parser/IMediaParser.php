@@ -19,9 +19,9 @@ interface IMediaParser {
 	/**
 	 * Parses the given file and extract the meta data
 	 * @param File $file
-	 * @return AudioInformation
+	 * @return IMediaInformation
 	 */
-	public function parseFile(File $file, IMediaInformation $info);
+	public function parseFile(File $file);
 	
 	
 	/**

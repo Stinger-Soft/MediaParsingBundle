@@ -10,18 +10,9 @@
  * file that was distributed with this source code.
  */
 
-namespace StingerSoft\MediaParsingBundle\Parser;
+namespace StingerSoft\MediaParsingBundle\Parser\Information;
 
-interface IMediaInformation {
-	
-	/**
-	 * @return string return the printable title of the media file
-	 */
-	public function getTitle();
-	
-	/**
-	 * @return string the string representation of the mime type
-	 */
-	public function getMimeType();
-	
+use StingerSoft\MediaParsingBundle\Parser\IMediaInformation;
+
+interface ISongInformation extends IArtistInformation, IAlbumInformation{
 }
