@@ -13,6 +13,7 @@ php:
 
 
 script:
+  - mkdir -p ./build/logs
   - ./vendor/bin/phpunit -v --coverage-clover ./build/logs/clover.xml
 
 after_script:
