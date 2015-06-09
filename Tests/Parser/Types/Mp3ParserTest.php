@@ -12,8 +12,6 @@
 
 namespace StingerSoft\MediaParsingBundle\Tests\Parser\Types;
 
-use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
-use StingerSoft\MediaParsingBundle\Parser\IParserChain;
 use StingerSoft\MediaParsingBundle\Parser\IMediaParser;
 use StingerSoft\MediaParsingBundle\Tests\TestCase;
 use Symfony\Component\HttpFoundation\File\File;
