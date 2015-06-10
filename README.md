@@ -1,2 +1,2 @@
-# MediaParsingBundle [![Build Status](https://travis-ci.org/Stinger-Soft/MediaParsingBundle.svg?branch=master)](https://travis-ci.org/Stinger-Soft/MediaParsingBundle)
+# MediaParsingBundle [![Build Status](https://travis-ci.org/Stinger-Soft/MediaParsingBundle.svg?branch=master)](https://travis-ci.org/Stinger-Soft/MediaParsingBundle) [![Coverage Status](https://coveralls.io/repos/Stinger-Soft/MediaParsingBundle/badge.svg?branch=master)](https://coveralls.io/r/Stinger-Soft/MediaParsingBundle?branch=master)
 Simple bundle to extract meta information from media files (e.g. mp3)
