@@ -36,12 +36,10 @@
 # Composer PHAR
 /composer.phar
 /composer.lock
-<<<<<<< HEAD
-/.buildpath
-/.project
-/.settings
-=======
 
 # IDE specific stuff
 /.idea/*
->>>>>>> 21e7d8389596ebbe456883f92dd79dc841deb986
+/.buildpath
+/.project
+/.settings
+
