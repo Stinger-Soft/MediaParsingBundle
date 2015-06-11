@@ -14,23 +14,22 @@ namespace StingerSoft\MediaParsingBundle\Tests\Parser\Types;
 
 use StingerSoft\MediaParsingBundle\Tests\TestCase;
 use Symfony\Component\HttpFoundation\File\File;
+use StingerSoft\MediaParsingBundle\Parser\MediaParserInterface;
 
 
 class Mp3Parser extends TestCase {
 	
 	/**
 	 * 
-	 * @var IMediaParser
+	 * @var MediaParserInterface
 	 */
 	protected $parser;
 	
-	public function setUp()
-	{
+	public function setUp(){
 		$this->parser = $this->createContainer()->get('stinger_soft_media_parser.media_parser.mp3');
 	}
 	
-	public function testService()
-	{
+	public function testService(){
 		$this->assertInstanceOf('StingerSoft\MediaParsingBundle\Parser\Types\Mp3Parser', $this->parser);
 	}
 	
@@ -46,7 +45,6 @@ class Mp3Parser extends TestCase {
 		$this->setExpectedException('RuntimeException');
 		$file = new File(__DIR__.'/../../Fixtures/no-mp3.mp3');
 		$this->parser->parseFile($file);
-
 	}
 
 }

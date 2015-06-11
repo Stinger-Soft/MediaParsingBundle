@@ -18,7 +18,7 @@ class ParserChain implements ParserChainInterface{
 	
 	/**
 	 * 
-	 * @var IMediaParser[]
+	 * @var MediaParserInterface[]
 	 * 
 	 */
 	private $parser = array();
@@ -31,7 +31,7 @@ class ParserChain implements ParserChainInterface{
 	/**
 	 * 
 	 * @param File $file
-	 * @return IMediaParser|NULL
+	 * @return MediaParserInterface|NULL
 	 */
 	public function getParser(File $file){
 		foreach($this->parser as $parser){
@@ -48,7 +48,7 @@ class ParserChain implements ParserChainInterface{
 	 * @throws \Exception
 	 * @return MediaInformationInterface|boolean
 	 */
-	public function parseFile($file=null){
+	public function parseFile($file){
 		if($file === null){
 			throw new \Exception("File is null!");
 		}
@@ -75,9 +75,9 @@ class ParserChain implements ParserChainInterface{
 		return $info;
 	}
 	/* (non-PHPdoc)
-	 * @see \StingerSoft\MediaParsingBundle\Parser\IParserChain::getAllParser()
+	 * @see \StingerSoft\MediaParsingBundle\Parser\ParserChainInterface::getAllParser()
 	 */
-	public function getAllParser() {
+	public function getAllParser(){
 		return $this->parser;
 	}
 	

@@ -19,14 +19,14 @@ interface ParserChainInterface {
 	
 	/**
 	 * Adds a parser to the parser chain. Should be called by the compiler pass
-	 * @param IMediaParser $parser
+	 * @param MediaParserInterface $parser
 	 */
 	public function addParser(MediaParserInterface $parser);
 	
 	/**
 	 * Tries to find a parser instance for the given file
 	 * @param File $file
-	 * @return IMediaParser|NULL
+	 * @return MediaParserInterface|NULL
 	 */
 	public function getParser(File $file);
 	
@@ -37,10 +37,10 @@ interface ParserChainInterface {
 	 * @return MediaInformationInterface|boolean|NULL An MediaInformationInterface instance on success, 
 	 * false if no parser was found, or null if the selected parser can't extract information
 	 */
-	public function parseFile($file=null);
+	public function parseFile($file);
 	
 	/**
-	 * @return IMediaParser[]
+	 * @return MediaParserInterface[]
 	 */
 	public function getAllParser();
 }

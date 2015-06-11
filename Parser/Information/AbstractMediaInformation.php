@@ -26,47 +26,47 @@ abstract class AbstractMediaInformation implements MediaInformationInterface {
 	protected $lastModified;
 
 
-	public function getTitle() {
+	public function getTitle(){
 		return $this->title;
 	}
 
-	public function setTitle($title) {
+	public function setTitle($title){
 		$this->title = $title;
 		return $this;
 	}
 
-	public function getMimeType() {
+	public function getMimeType(){
 		return $this->mimeType;
 	}
 
-	public function setMimeType($mimeType) {
+	public function setMimeType($mimeType){
 		$this->mimeType = $mimeType;
 		return $this;
 	}
 
-	public function getFilePath() {
+	public function getFilePath(){
 		return $this->filePath;
 	}
 
-	public function setFilePath($filePath) {
+	public function setFilePath($filePath){
 		$this->filePath = $filePath;
 		return $this;
 	}
 
-	public function getFileSize() {
+	public function getFileSize(){
 		return $this->fileSize;
 	}
 
-	public function setFileSize($fileSize) {
+	public function setFileSize($fileSize){
 		$this->fileSize = $fileSize;
 		return $this;
 	}
 
-	public function getLastModified() {
+	public function getLastModified(){
 		return $this->lastModified;
 	}
 
-	public function setLastModified(\DateTime $lastModified) {
+	public function setLastModified(\DateTime $lastModified){
 		$this->lastModified = $lastModified;
 		return $this;
 	}

@@ -16,7 +16,7 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\Reference;
 
-class ParserCompilerPass implements CompilerPassInterface{
+class ParserCompilerPass implements CompilerPassInterface {
 	/**
 	 * Searches for all Audio Parsers that are tagged as 'stinger_soft.audioparser' inside all services.yml files
 	 * @see Symfony\Component\DependencyInjection\Compiler.CompilerPassInterface::process()

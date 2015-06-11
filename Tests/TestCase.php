@@ -19,7 +19,7 @@ use Symfony\Component\DependencyInjection\ParameterBag\ParameterBag;
 
 class TestCase extends \PHPUnit_Framework_TestCase {
 
-	public function createContainer() {
+	public function createContainer(){
 		$container = new ContainerBuilder(new ParameterBag(array(
 			'kernel.debug'       => false,
 			'kernel.bundles'     => array('YamlBundle' => 'Fixtures\Bundles\YamlBundle\YamlBundle'),
@@ -37,7 +37,6 @@ class TestCase extends \PHPUnit_Framework_TestCase {
 		$container->getCompilerPassConfig()->setOptimizationPasses(array(new ResolveDefinitionTemplatesPass()));
 		$container->getCompilerPassConfig()->setRemovingPasses(array());
 		$container->compile();
-
 
 		return $container;
 	}

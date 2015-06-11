@@ -13,7 +13,7 @@ namespace StingerSoft\MediaParsingBundle\Parser\Information;
 
 use StingerSoft\MediaParsingBundle\Parser\MediaInformationInterface;
 
-interface AlbumInformationInterface extends MediaInformationInterface{
+interface AlbumInformationInterface extends MediaInformationInterface {
 	
 	/**
 	 * @return string returns the name of the album the media file is from

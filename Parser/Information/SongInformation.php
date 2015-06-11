@@ -17,7 +17,7 @@ namespace StingerSoft\MediaParsingBundle\Parser\Information;
  * @author Florian Meyer
  *
  */
-class SongInformation extends AbstractMediaInformation implements SongInformationInterface{
+class SongInformation extends AbstractMediaInformation implements SongInformationInterface {
 
 	
 	protected $artist;

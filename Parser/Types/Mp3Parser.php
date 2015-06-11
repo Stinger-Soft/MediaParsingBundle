@@ -15,7 +15,7 @@ use Symfony\Component\HttpFoundation\File\File;
 use StingerSoft\MediaParsingBundle\Parser\Information\SongInformation;
 use GetId3\GetId3Core;
 
-class Mp3Parser implements MediaParserInterface{
+class Mp3Parser implements MediaParserInterface {
 	
 	
 	CONST ALBUM = 'album';
@@ -30,9 +30,9 @@ class Mp3Parser implements MediaParserInterface{
 
 	
 	/* (non-PHPdoc)
-	 * @see \StingerSoft\MediaParsingBundle\Parser\IAudioParser::parseFile()
+	 * @see \StingerSoft\MediaParsingBundle\Parser\AudioParserInterface::parseFile()
 	 */
-	public function parseFile(File $file) {
+	public function parseFile(File $file){
 		$getId3 = new GetId3Core();
 		$getId3->option_md5_data        = true;
 		$getId3->option_md5_data_source = true;
@@ -89,9 +89,9 @@ class Mp3Parser implements MediaParserInterface{
 	}
 
 	/* (non-PHPdoc)
-	 * @see \StingerSoft\MediaParsingBundle\Parser\IAudioParser::canHandle()
+	 * @see \StingerSoft\MediaParsingBundle\Parser\AudioParserInterface::canHandle()
 	 */
-	public function canHandle(File $file) {
+	public function canHandle(File $file){
 		return $file->getExtension() == "mp3";
 
 	}
