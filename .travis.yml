@@ -1,9 +1,30 @@
 language: php
-before_script:
+
+cache:
+    directories:
+        - $HOME/.composer/cache
+
+matrix:
+  include:
+    - php: 5.5
+      env: COVERALLS=1
+
+    - php: 5.6
+      env: COVERALLS=1
+
+    - php: hhvm
+      env: COVERALLS=0
+
+before_install:
   - composer self-update
+
+install:
   - composer install --prefer-source
-php:
-  - 5.5
-  - 5.6
-  - hhvm
-  - nightly
+
+script:
+  - mkdir -p ./build/logs
+  - sh -c "if [ '$COVERALLS' = '1' ]; then ./vendor/bin/phpunit --stderr -v --coverage-clover build/logs/clover.xml; fi"
+  - sh -c "if [ '$COVERALLS' = '0' ]; then ./vendor/bin/phpunit --stderr -v; fi"
+
+after_script:
+  - sh -c "if [ '$COVERALLS' = '1' ]; then php ./vendor/bin/coveralls -v; fi"
