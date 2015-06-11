@@ -12,7 +12,5 @@
 
 namespace StingerSoft\MediaParsingBundle\Parser\Information;
 
-use StingerSoft\MediaParsingBundle\Parser\IMediaInformation;
-
 interface ISongInformation extends IArtistInformation, IAlbumInformation{
 }

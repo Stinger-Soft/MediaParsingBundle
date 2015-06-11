@@ -39,4 +39,33 @@ class ParserChainTest extends TestCase {
 		$parser = $this->parserChain->getParser($file);
 		$this->assertInstanceOf('StingerSoft\MediaParsingBundle\Parser\Types\Mp3Parser', $parser, 'No mp3 media parser found!');
 	}
+	
+	public function testFindNoFileParser(){
+		$file = new File(__DIR__.'/../Fixtures/notparsable.ddd');
+		$parser = $this->parserChain->getParser($file);
+		$this->assertNull($parser);
+	}
+	
+	public function testParseNull(){
+		$this->setExpectedException('Exception');
+		$this->parserChain->parseFile(null);
+	}
+	
+	public function testParseDirectory(){
+		$this->setExpectedException('Exception');
+		$this->parserChain->parseFile(__DIR__);
+	}
+	
+	public function testMp3Parsing(){
+		$file = new File(__DIR__.'/../Fixtures/test.mp3');
+		$info = $this->parserChain->parseFile($file);
+	
+		$this->assertInstanceOf('StingerSoft\MediaParsingBundle\Parser\Information\ISongInformation', $info);
+	}
+	
+	public function testParseTheUnparsable(){
+		$file = new File(__DIR__.'/../Fixtures/notparsable.ddd');
+		$parser = $this->parserChain->parseFile($file);
+		$this->assertFalse($parser);
+	}
 }

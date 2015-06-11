@@ -70,6 +70,4 @@ abstract class AbstractMediaInformation implements IMediaInformation {
 		$this->lastModified = $lastModified;
 		return $this;
 	}
-
-
 }

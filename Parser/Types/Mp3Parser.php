@@ -11,7 +11,6 @@
 namespace StingerSoft\MediaParsingBundle\Parser\Types;
 
 use StingerSoft\MediaParsingBundle\Parser\IMediaParser;
-use StingerSoft\MediaParsingBundle\Parser\IMediaInformation;
 use Symfony\Component\HttpFoundation\File\File;
 use StingerSoft\MediaParsingBundle\Parser\Information\SongInformation;
 use GetId3\GetId3Core;
@@ -70,5 +69,4 @@ class Mp3Parser implements IMediaParser{
 		return $file->getExtension() == "mp3";
 
 	}
-
 }

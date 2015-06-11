@@ -28,7 +28,7 @@ class Configuration  implements ConfigurationInterface
 	public function getConfigTreeBuilder()
 	{
 		$treeBuilder = new TreeBuilder();
-		$rootNode = $treeBuilder->root('stinger_soft_audio_parser');
+		$treeBuilder->root('stinger_soft_audio_parser');
 
 
 		return $treeBuilder;

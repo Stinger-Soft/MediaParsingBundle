@@ -49,14 +49,11 @@ class ParserChain implements IParserChain{
 	 * @return IMediaInformation|boolean
 	 */
 	public function parseFile($file=null){
-		if($file == null){
+		if($file === null){
 			throw new \Exception("File is null!");
 		}
 		if(\is_string($file)){
 			$file = new File($this->createPath($file));
-		}
-		if(!$file->isFile()){
-			throw new \Exception("Given file is not a file <".$file->getFilename().">");
 		}
 		if(!$file->isReadable()){
 			throw new \Exception("Can't read file <".$file->getFilename().">");
@@ -70,7 +67,10 @@ class ParserChain implements IParserChain{
 		$info = $parser->parseFile($file);
 		$info->setFilePath($file->getRealPath());
 		$info->setFileSize($file->getSize());
-		$info->setLastModified(\DateTime::createFromFormat('U', $file->getMTime()));
+		$lastModified = \DateTime::createFromFormat('U', $file->getMTime());
+		if($lastModified !== false){
+			$info->setLastModified($lastModified);
+		}
 		
 		return $info;
 	}
@@ -79,7 +79,16 @@ class ParserChain implements IParserChain{
 	 */
 	public function getAllParser() {
 		return $this->parser;
-
 	}
-
+	
+	protected function createPath($path){
+		if($this->startsWith($path, 'B64')){
+			$path = \base64_decode(\substr($path, 3));
+		}
+		return $path;
+	}
+	
+	protected function startsWith($haystack, $needle){
+		return !strncmp($haystack, $needle, strlen($needle));
+	}
 }

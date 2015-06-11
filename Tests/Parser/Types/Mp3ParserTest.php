@@ -41,5 +41,13 @@ class Mp3Parser extends TestCase {
 		
 		$this->assertInstanceOf('StingerSoft\MediaParsingBundle\Parser\Information\ISongInformation', $info);
 	}
+	
+
+	public function testNoMp3Parsing(){
+		$this->setExpectedException('RuntimeException');
+		$file = new File(__DIR__.'/../../Fixtures/no-mp3.mp3');
+		$this->parser->parseFile($file);
+
+	}
 
 }

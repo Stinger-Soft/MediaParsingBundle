@@ -22,8 +22,6 @@ class SongInformation extends AbstractMediaInformation implements ISongInformati
 	
 	protected $artist;
 	
-	protected $mimeType;
-	
 	protected $album;
 	
 	protected $trackNumber;
@@ -35,10 +33,7 @@ class SongInformation extends AbstractMediaInformation implements ISongInformati
 	protected $totalSetNumbers;
 	
 
-	public function setTitle($title) {
-		$this->title = $title;
-		return $this;
-	}
+
 	public function getArtist() {
 		return $this->artist;
 	}
@@ -46,13 +41,7 @@ class SongInformation extends AbstractMediaInformation implements ISongInformati
 		$this->artist = $artist;
 		return $this;
 	}
-	public function getMimeType() {
-		return $this->mimeType;
-	}
-	public function setMimeType($mimeType) {
-		$this->mimeType = $mimeType;
-		return $this;
-	}
+
 	public function getAlbum() {
 		return $this->album;
 	}
@@ -88,6 +77,4 @@ class SongInformation extends AbstractMediaInformation implements ISongInformati
 		$this->totalSetNumbers = $totalSetNumbers;
 		return $this;
 	}
-	
-	
 }
