@@ -22,13 +22,13 @@ class ParserCompilerPass implements CompilerPassInterface{
 	 * @see Symfony\Component\DependencyInjection\Compiler.CompilerPassInterface::process()
 	 */
 	public function process(ContainerBuilder $container){
-		if (!$container->hasDefinition(IParserChain::SERVICE_ID)) {
+		if (!$container->hasDefinition(ParserChainInterface::SERVICE_ID)) {
 			return;
 		}
 		
-		$definition = $container->getDefinition(IParserChain::SERVICE_ID);
+		$definition = $container->getDefinition(ParserChainInterface::SERVICE_ID);
 
-		$taggedServices = $container->findTaggedServiceIds(IMediaParser::SERVICE_TAG);
+		$taggedServices = $container->findTaggedServiceIds(ParserChainInterface::SERVICE_TAG);
 		
 		foreach ($taggedServices as $id => $tagAttributes) {
 			foreach ($tagAttributes as $attributes) {

@@ -13,7 +13,7 @@
 namespace StingerSoft\MediaParsingBundle\Parser;
 
 use Symfony\Component\HttpFoundation\File\File;
-interface IParserChain {
+interface ParserChainInterface {
 	
 	const SERVICE_ID = 'stinger_soft_media_parser.parser_chain';
 	
@@ -21,7 +21,7 @@ interface IParserChain {
 	 * Adds a parser to the parser chain. Should be called by the compiler pass
 	 * @param IMediaParser $parser
 	 */
-	public function addParser(IMediaParser $parser);
+	public function addParser(MediaParserInterface $parser);
 	
 	/**
 	 * Tries to find a parser instance for the given file
@@ -31,10 +31,10 @@ interface IParserChain {
 	public function getParser(File $file);
 	
 	/**
-	 * Parses the given file and returns a IMediaInformation object
+	 * Parses the given file and returns a MediaInformationInterface object
 	 * @param string|File $file Filepath or file instance to the file
 	 * @throws \Exception Thrown if the file is not readable (i.e. IO problems)
-	 * @return IMediaInformation|boolean|NULL An IMediaInformation instance on success, 
+	 * @return MediaInformationInterface|boolean|NULL An MediaInformationInterface instance on success, 
 	 * false if no parser was found, or null if the selected parser can't extract information
 	 */
 	public function parseFile($file=null);

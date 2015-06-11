@@ -11,9 +11,9 @@
 
 namespace StingerSoft\MediaParsingBundle\Parser\Information;
 
-use StingerSoft\MediaParsingBundle\Parser\IMediaInformation;
+use StingerSoft\MediaParsingBundle\Parser\MediaInformationInterface;
 
-abstract class AbstractMediaInformation implements IMediaInformation {
+abstract class AbstractMediaInformation implements MediaInformationInterface {
 
 	protected $title;
 

@@ -12,5 +12,5 @@
 
 namespace StingerSoft\MediaParsingBundle\Parser\Information;
 
-interface ISongInformation extends IArtistInformation, IAlbumInformation{
+interface SongInformationInterface extends ArtistInformationInterface, AlbumInformationInterface{
 }

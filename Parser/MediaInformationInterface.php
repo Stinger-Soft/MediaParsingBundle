@@ -12,7 +12,7 @@
 
 namespace StingerSoft\MediaParsingBundle\Parser;
 
-interface IMediaInformation {
+interface MediaInformationInterface {
 	
 	/**
 	 * @return string return the printable title of the media file

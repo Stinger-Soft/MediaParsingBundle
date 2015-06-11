@@ -14,14 +14,14 @@ namespace StingerSoft\MediaParsingBundle\Parser;
 
 use Symfony\Component\HttpFoundation\File\File;
 
-interface IMediaParser {
+interface MediaParserInterface {
 	
 	const SERVICE_TAG = 'stinger_soft_media_parser.mediaparser';
 
 	/**
 	 * Parses the given file and extract the meta data
 	 * @param File $file
-	 * @return IMediaInformation
+	 * @return MediaInformationInterface
 	 */
 	public function parseFile(File $file);
 	

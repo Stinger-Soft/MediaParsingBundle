@@ -14,7 +14,7 @@ namespace StingerSoft\MediaParsingBundle\Parser;
 
 use Symfony\Component\HttpFoundation\File\File;
 
-class ParserChain implements IParserChain{
+class ParserChain implements ParserChainInterface{
 	
 	/**
 	 * 
@@ -24,7 +24,7 @@ class ParserChain implements IParserChain{
 	private $parser = array();
 	
 	
-	public function addParser(IMediaParser $parser){
+	public function addParser(MediaParserInterface $parser){
 		$this->parser[] = $parser;
 	}
 	
@@ -46,7 +46,7 @@ class ParserChain implements IParserChain{
 	 * 
 	 * @param string|File $file
 	 * @throws \Exception
-	 * @return IMediaInformation|boolean
+	 * @return MediaInformationInterface|boolean
 	 */
 	public function parseFile($file=null){
 		if($file === null){

@@ -11,9 +11,9 @@
 
 namespace StingerSoft\MediaParsingBundle\Parser\Information;
 
-use StingerSoft\MediaParsingBundle\Parser\IMediaInformation;
+use StingerSoft\MediaParsingBundle\Parser\MediaInformationInterface;
 
-interface IArtistInformation extends IMediaInformation{
+interface ArtistInformationInterface extends MediaInformationInterface{
 	
 	/**
 	 * @return string The name of the artist performing the given media file
