@@ -13,9 +13,9 @@
 namespace StingerSoft\MediaParsingBundle\Tests\Parser;
 
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
-use StingerSoft\MediaParsingBundle\Parser\IParserChain;
 use StingerSoft\MediaParsingBundle\Tests\TestCase;
 use Symfony\Component\HttpFoundation\File\File;
+use StingerSoft\MediaParsingBundle\Parser\ParserChainInterface;
 
 
 class ParserChainTest extends TestCase {
@@ -27,7 +27,7 @@ class ParserChainTest extends TestCase {
 	protected $parserChain;
 	
 	public function setUp(){
-		$this->parserChain = $this->createContainer()->get(IParserChain::SERVICE_ID);
+		$this->parserChain = $this->createContainer()->get(ParserChainInterface::SERVICE_ID);
 	}
 	
 	public function testAddParser(){
@@ -60,7 +60,7 @@ class ParserChainTest extends TestCase {
 		$file = new File(__DIR__.'/../Fixtures/test.mp3');
 		$info = $this->parserChain->parseFile($file);
 	
-		$this->assertInstanceOf('StingerSoft\MediaParsingBundle\Parser\Information\ISongInformation', $info);
+		$this->assertInstanceOf('StingerSoft\MediaParsingBundle\Parser\Information\SongInformationInterface', $info);
 	}
 	
 	public function testParseTheUnparsable(){

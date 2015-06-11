@@ -14,7 +14,7 @@ namespace StingerSoft\MediaParsingBundle\Tests\Parser\Information;
 
 use StingerSoft\MediaParsingBundle\Parser\Information\AbstractMediaInformation;
 
-class AbstractMediaInformationTest  extends \PHPUnit_Framework_TestCase {
+class AbstractMediaInformationTest extends \PHPUnit_Framework_TestCase {
 	
 	/**
 	 * @var AbstractMediaInformation

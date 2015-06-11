@@ -14,7 +14,7 @@ namespace StingerSoft\MediaParsingBundle\Tests\Parser\Information;
 
 use StingerSoft\MediaParsingBundle\Parser\Information\SongInformation;
 
-class SongInformationTest  extends \PHPUnit_Framework_TestCase {
+class SongInformationTest extends \PHPUnit_Framework_TestCase {
 	
 	/**
 	 * @var SongInformation
