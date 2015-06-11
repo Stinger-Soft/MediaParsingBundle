@@ -28,7 +28,7 @@ class ParserCompilerPass implements CompilerPassInterface{
 		
 		$definition = $container->getDefinition(ParserChainInterface::SERVICE_ID);
 
-		$taggedServices = $container->findTaggedServiceIds(ParserChainInterface::SERVICE_TAG);
+		$taggedServices = $container->findTaggedServiceIds(MediaParserInterface::SERVICE_TAG);
 		
 		foreach ($taggedServices as $id => $tagAttributes) {
 			foreach ($tagAttributes as $attributes) {
