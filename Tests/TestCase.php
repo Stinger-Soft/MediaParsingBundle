@@ -12,7 +12,7 @@
 namespace StingerSoft\MediaParsingBundle\Tests;
 
 use StingerSoft\MediaParsingBundle\DependencyInjection\StingerSoftMediaParsingExtension;
-use StingerSoft\MediaParsingBundle\StingerMediaParsingBundle;
+use StingerSoft\MediaParsingBundle\StingerSoftMediaParsingBundle;
 use Symfony\Component\DependencyInjection\Compiler\ResolveDefinitionTemplatesPass;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\ParameterBag\ParameterBag;
@@ -31,7 +31,7 @@ class TestCase extends \PHPUnit_Framework_TestCase {
 		$container->registerExtension($extension);
 		$extension->load(array(), $container);
 
-		$bundle = new StingerMediaParsingBundle();
+		$bundle = new StingerSoftMediaParsingBundle();
 		$bundle->build($container);
 
 		$container->getCompilerPassConfig()->setOptimizationPasses(array(new ResolveDefinitionTemplatesPass()));
