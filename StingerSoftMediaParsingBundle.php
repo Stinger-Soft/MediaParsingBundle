@@ -16,7 +16,7 @@ use Symfony\Component\HttpKernel\Bundle\Bundle;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use StingerSoft\MediaParsingBundle\Parser\ParserCompilerPass;
 
-class StingerMediaParsingBundle extends Bundle {
+class StingerSoftMediaParsingBundle extends Bundle {
 	
 	public function build(ContainerBuilder $container){
 		parent::build($container);
