@@ -13,6 +13,7 @@
 namespace StingerSoft\MediaParsingBundle\Parser;
 
 use Symfony\Component\HttpFoundation\File\File;
+use StingerSoft\MediaParsingBundle\Parser\Information\FileInformation;
 
 class ParserChain implements ParserChainInterface{
 	
@@ -65,6 +66,14 @@ class ParserChain implements ParserChainInterface{
 		}
 	
 		$info = $parser->parseFile($file);
+		
+		//No real information found for the given file, so we fall back to a basic file
+		//information object
+		if(!$info){
+			$info = new FileInformation();
+			$info->setTitle($file->getFilename());
+		}
+		
 		$info->setFilePath($file->getRealPath());
 		$info->setFileSize($file->getSize());
 		$lastModified = \DateTime::createFromFormat('U', $file->getMTime());
