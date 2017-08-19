@@ -27,7 +27,7 @@
 	"license" : "Apache-2.0",
 	"require" : {
 		"php" : ">=5.5",
-		"symfony/framework-bundle" : "^2.7",
+		"symfony/framework-bundle" : "^2.7|^3.0",
 		"phansys/getid3" : "2.1.x-dev"
 	},
 	"require-dev" : {
